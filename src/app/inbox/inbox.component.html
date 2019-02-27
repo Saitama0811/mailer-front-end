@@ -1,0 +1,28 @@
+<mat-card>
+  <div class="row">
+    <div class="col-md-2">
+      <h1 class="text-center"><b>Mailer</b></h1>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <mat-form-field>
+        <div class="row">
+          <div class="col-1">
+              <i class="fas fa-search text-muted"></i>
+          </div>
+          <div class="col-11">
+              <input type="text" matInput placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search for Mails by Subject">
+          </div>
+        </div>
+      </mat-form-field>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <button class="loginbutton" mat-button [matMenuTriggerFor]="menu"><b>John Doe</b></button>
+        <mat-menu #menu="matMenu">
+          <button class="menu-button" mat-menu-item>Welcome</button>
+          <button class="menu-button" mat-menu-item>Log out</button>
+        </mat-menu>
+    </div>
+  </div>
+</mat-card>

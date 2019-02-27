@@ -1,0 +1,27 @@
+mat-card{
+    margin-top: 30%;
+    padding: 4%;
+    border-radius: 40px;
+}
+.row{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+mat-form-field {
+    width: 100%;
+}
+.loginbutton{
+    width: 100%;
+    background-color: #43425D;
+    color: white;
+}
+
+h1{
+    color:#43425D;
+}
+a{
+    font-size: 15px;
+}
+mat-checkbox{
+    font-size: 15px;
+}

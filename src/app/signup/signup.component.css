@@ -1,0 +1,25 @@
+mat-card{
+    margin-top: 15%;
+    padding: 4%;
+    border-radius: 40px;
+}
+.row-padding{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+h1{
+    color:#43425D;
+}
+mat-form-field{
+    width:100%;
+}
+
+.form-width{
+    width:100%;
+}
+
+.signupbutton{
+    width: 100%;
+    background-color: #43425D;
+    color: white;
+}

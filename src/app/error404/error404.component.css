@@ -1,0 +1,29 @@
+div{
+    color: #E3F2FD;
+    padding: 6%;
+    background-color: rgb(135, 204, 253);
+}
+a{
+    width: 30%;
+    
+}
+
+
+
+@keyframes cortana {
+    0% {
+      box-shadow: 0 0 0 10px #3e92d2, 0 0 0 40px #1f445f;
+    }
+    
+    100% {
+      box-shadow: 0 0 0 15px #3e92d2, 0 0 0 25px #1f445f;
+    }
+  }
+  
+  .cortana {
+      height:1%;
+      width:1%;
+    border-radius:50%;
+    box-shadow: 0 0 0 10px #3e92d2, 0 0 0 40px #1f445f;
+    animation: cortana 1.5s infinite ease-in-out alternate;
+  }
