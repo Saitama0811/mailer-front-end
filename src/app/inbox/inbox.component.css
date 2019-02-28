@@ -10,3 +10,32 @@ mat-form-field{
 .menu-button{
     width:100%;
 }
+
+.inbox-options{
+    margin-top: 5%;
+}
+
+.mailoptions{
+    height:39vw;overflow: auto;
+    margin-top:0.8%;
+}
+.inbox-ops:hover{
+    color:gray;
+}
+
+.pointer {cursor: pointer;
+    margin-left: 18%;
+font-size: 1.2rem;}
+
+.composebutton{
+    width: 100%;
+    background-color: #43425D;
+    color: white;
+    margin-top: 8%;
+    font-size: 20px;
+    border-radius: 40px;
+}
+
+.composebutton:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}

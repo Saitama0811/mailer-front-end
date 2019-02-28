@@ -21,8 +21,30 @@
         <button class="loginbutton" mat-button [matMenuTriggerFor]="menu"><b>John Doe</b></button>
         <mat-menu #menu="matMenu">
           <button class="menu-button" mat-menu-item>Welcome</button>
-          <button class="menu-button" mat-menu-item>Log out</button>
+          <button routerLink="/login" class="menu-button" mat-menu-item>Log out</button>
         </mat-menu>
     </div>
   </div>
 </mat-card>
+
+<div class="row">
+  <div class="col-lg-2">
+    <mat-card class="inbox-options">
+      <mat-card class="composebutton card text-center"><i class="fas fa-plus"></i>&nbsp;&nbsp;Compose</mat-card><br><br>
+
+      <p class="pointer inbox-ops"><i class="fas fa-inbox"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inbox</p>
+      <p class="pointer inbox-ops"><i class="fab fa-telegram-plane"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sent</p>
+      <p class="pointer inbox-ops">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Important</p>
+      <p class="pointer inbox-ops"><i class="fas fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starred</p>
+      <p class="pointer inbox-ops"><i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft</p>
+      <p class="pointer inbox-ops"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trash</p>
+      
+    </mat-card>
+  </div>
+  <div class="col-lg-4 mailoptions">
+      <app-received-mail></app-received-mail>
+  </div>
+  <div class="col-lg-6">
+    
+  </div>
+</div>

@@ -16,6 +16,8 @@ import { ForgotpassComponent } from './forgotpass/forgotpass.component';
 import { Error404Component } from './error404/error404.component';
 import { ChangepassComponent } from './changepass/changepass.component';
 import { InboxComponent } from './inbox/inbox.component';
+import { ReceivedMailComponent } from './received-mail/received-mail.component';
+import { ViewMailComponent } from './view-mail/view-mail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { InboxComponent } from './inbox/inbox.component';
     ForgotpassComponent,
     Error404Component,
     ChangepassComponent,
-    InboxComponent
+    InboxComponent,
+    ReceivedMailComponent,
+    ViewMailComponent
   ],
   imports: [
     BrowserModule,
