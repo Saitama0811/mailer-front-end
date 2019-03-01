@@ -15,6 +15,7 @@ const routes: Routes = [
   {path: 'changepass' , component: ChangepassComponent},
   {path: '' , redirectTo: '/login', pathMatch: 'full'},
   {path: 'inbox' , component: InboxComponent},
+  {path: 'inbox/:id' , component: InboxComponent},
   {path: '**' , component: Error404Component}
 ];
 

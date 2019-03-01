@@ -1,3 +1,24 @@
-<p>
-  view-mail works!
-</p>
+<mat-card class="mailreadbox">
+
+
+  <div class="row">
+    <div class="col">
+      <h6 class="text-center">mail from:<br>{{service.mail.mail_from}}</h6>  
+    </div>
+    <div class="col">
+      <h3 class="text-center">{{service.mail.mail_subject}}</h3>
+    </div>
+    <div class="col">
+      <p class="text-center">{{service.mail.mail_date}}</p>
+    </div>
+  </div>
+  <hr><br><br>
+  <p>{{service.mail.mail_body}}</p>
+  <div class="text-center replycolor">
+    <br><br>
+    <p>Click here to <a href="false" routerLink="/compose">Reply</a></p>
+    <br><br>
+  </div>
+
+
+</mat-card>
