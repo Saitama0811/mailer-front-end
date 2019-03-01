@@ -16,6 +16,7 @@ export class InboxComponent implements OnInit {
   importantmail = false;
   starredmail = false;
   trashmail = false;
+  obj;
   constructor(private service: ApiConnectionService, private routes: Router) { }
 
   ngOnInit() {
@@ -25,6 +26,14 @@ export class InboxComponent implements OnInit {
 
   refreshPage() {
     setTimeout(() => {this.routes.navigate(['/inbox']); }, 0);
+  }
+
+  onsearch(searchdata: HTMLInputElement) {
+    this.obj = {
+      mail_subject: searchdata.value
+    };
+    console.log(searchdata.value);
+    this.service.getMailsbySubject(this.obj).subscribe(val => console.log(val));
   }
 
   composebuttonClicked()  {

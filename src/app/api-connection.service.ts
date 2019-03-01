@@ -108,4 +108,9 @@ composeClicked = false;
     return x;
   }
 
+  getMailsbySubject(data) {
+    const x =  this.http.post(`https://localhost:44307/api/search`, data);
+    return x;
+  }
+
 }
