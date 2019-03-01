@@ -1,7 +1,7 @@
 <mat-card>
   <div class="row">
     <div class="col-md-2">
-      <h1 class="text-center"><b>Mailer</b></h1>
+      <h1 class="text-center"><b class="logo">Mailer</b></h1>
     </div>
     <div class="col-md-1">
       <i (click)="refreshPage()" class="refresh fas fa-sync-alt fa-2x"></i>
@@ -36,16 +36,20 @@
 
       <p (click)="showInbox()" class="pointer inbox-ops"><i class="fas fa-inbox"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inbox</p>
       <p (click)="showSent()" class="pointer inbox-ops"><i class="fab fa-telegram-plane"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sent</p>
-      <p class="pointer inbox-ops">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Important</p>
-      <p class="pointer inbox-ops"><i class="fas fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starred</p>
-      <p class="pointer inbox-ops"><i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft</p>
-      <p class="pointer inbox-ops"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trash</p>
+      <p (click)="showImportant()" class="pointer inbox-ops">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Important</p>
+      <p (click)="showStarred()" class="pointer inbox-ops"><i class="fas fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starred</p>
+      <p (click)="showDraft()" class="pointer inbox-ops"><i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft</p>
+      <p (click)="showTrash()" class="pointer inbox-ops"><i class="fas fa-trash-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trash</p>
       
     </mat-card>
   </div>
   <div class="col-lg-4 mailoptions">
       <app-received-mail *ngIf="inboxmail"></app-received-mail>
       <app-sent-mail *ngIf="sentmail"></app-sent-mail>
+      <app-important-mail *ngIf="importantmail"></app-important-mail>
+      <app-starred-mail *ngIf="starredmail"></app-starred-mail>
+      <app-trash-mail *ngIf="trashmail"></app-trash-mail>
+      <app-draft-mail *ngIf="draftmail"></app-draft-mail>
   </div>
   <div class="col-lg-6">
     <app-view-mail *ngIf="service.mailClicked"></app-view-mail>

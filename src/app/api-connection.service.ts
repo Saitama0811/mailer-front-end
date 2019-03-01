@@ -43,4 +43,41 @@ composeClicked = false;
     const x = this.http.delete(`https://localhost:44307/api/sentmail/${id}`);
     return x;
   }
+
+  getAllImportantMail() {
+    const x =  this.http.post(`https://localhost:44307/api/importantmail`, this.usermailobj);
+    return x;
+  }
+
+  getImportantMailbyId(id) {
+    const x = this.http.get(`https://localhost:44307/api/importantmail/${id}`);
+    return x;
+  }
+
+  getAllStarredMail() {
+    const x =  this.http.post(`https://localhost:44307/api/starredmail`, this.usermailobj);
+    return x;
+  }
+
+  getStarredMailbyId(id) {
+    const x = this.http.get(`https://localhost:44307/api/starredmail/${id}`);
+    return x;
+  }
+
+
+  getAllTrashMail() {
+    const x =  this.http.post(`https://localhost:44307/api/trashmail`, this.usermailobj);
+    return x;
+  }
+
+  getTrashMailbyId(id) {
+    const x = this.http.get(`https://localhost:44307/api/trashmail/${id}`);
+    return x;
+  }
+
+  deleteTrashMail(id) {
+    const x = this.http.delete(`https://localhost:44307/api/trashmail/${id}`);
+    return x;
+  }
+
 }

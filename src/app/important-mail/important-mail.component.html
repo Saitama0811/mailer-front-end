@@ -1,3 +1,18 @@
-<p>
-  important-mail works!
-</p>
+<div>
+  <mat-card>
+    <h4 class="text-center">Important</h4>
+  </mat-card>
+  <mat-card *ngFor="let val of value">
+    <div class="row" (click)="onClickMail(importantmail)" id="{{val.mail_ID}}" #importantmail>
+      <div class="col">
+        <p class="text-center">{{val.mail_from}}</p>
+      </div>
+      <div class="col">
+        <p class="text-center"><b>{{val.mail_subject}}</b></p>
+      </div>
+      <div class="col">
+        <p class="text-center">Important</p>
+      </div>
+    </div>
+  </mat-card>
+</div>

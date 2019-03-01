@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiConnectionService } from '../api-connection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-draft-mail',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DraftMailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ApiConnectionService, private routes: Router) { }
 
   ngOnInit() {
   }

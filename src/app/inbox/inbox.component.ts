@@ -50,4 +50,40 @@ export class InboxComponent implements OnInit {
     this.trashmail = false;
   }
 
+  showImportant() {
+    this.inboxmail = false;
+    this.sentmail = false;
+    this.draftmail = false;
+    this.importantmail = true;
+    this.starredmail = false;
+    this.trashmail = false;
+  }
+
+  showStarred() {
+    this.inboxmail = false;
+    this.sentmail = false;
+    this.draftmail = false;
+    this.importantmail = false;
+    this.starredmail = true;
+    this.trashmail = false;
+  }
+
+  showTrash() {
+    this.inboxmail = false;
+    this.sentmail = false;
+    this.draftmail = false;
+    this.importantmail = false;
+    this.starredmail = false;
+    this.trashmail = true;
+  }
+
+  showDraft() {
+    this.inboxmail = false;
+    this.sentmail = false;
+    this.draftmail = true;
+    this.importantmail = false;
+    this.starredmail = false;
+    this.trashmail = false;
+  }
+
 }

@@ -1,3 +1,18 @@
-<p>
-  trash-mail works!
-</p>
+<div>
+  <mat-card>
+    <h4 class="text-center">Trash</h4>
+  </mat-card>
+  <mat-card *ngFor="let val of value">
+    <div class="row" (click)="onClickMail(trashmail)" id="{{val.mail_ID}}" #trashmail>
+      <div class="col">
+        <p class="text-center">{{val.mail_from}}</p>
+      </div>
+      <div class="col">
+        <p class="text-center"><b>{{val.mail_subject}}</b></p>
+      </div>
+      <div class="col">
+        <p class="text-center pointer" (click)="refreshPage()"><a (click)="onDeleteTrashMail(trashmail)">Delete Forever</a></p>
+      </div>
+    </div>
+  </mat-card>
+</div>
