@@ -15,8 +15,13 @@ mat-form-field{
     margin-top: 5%;
 }
 
+.refresh{
+margin-top: 15%;
+}
+
 .mailoptions{
-    height:39vw;overflow: auto;
+    height:39vw;
+    overflow: auto;
     margin-top:0.8%;
 }
 .inbox-ops:hover{

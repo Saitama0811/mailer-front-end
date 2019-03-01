@@ -17,9 +17,15 @@ export class ReceivedMailComponent implements OnInit {
   }
 
   onClickMail(elementid: HTMLInputElement) {
+    this.service.mailClicked = true;
+    this.service.composeClicked = false;
     this.routes.navigate(['/inbox/' + elementid.id]);
     this.service.getReceivedMailbyId(elementid.id).subscribe(val => this.service.mail = val);
     // this.service.getReceivedMailbyId()
+  }
+
+  onDeleteReceivedMail(id: HTMLInputElement) {
+    this.service.deleteReceivedMail(id.id).subscribe(val => console.log(val));
   }
 
 }

@@ -7,3 +7,13 @@
     background-color:lightgray;
     border-radius: 20px;
 }
+.mailbodylimit{
+    height:16vw;
+    overflow: auto;
+}
+
+.pointer {cursor: pointer;
+}
+p a{
+    color:blue;
+}

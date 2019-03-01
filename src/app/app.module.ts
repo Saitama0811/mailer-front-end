@@ -18,6 +18,7 @@ import { ChangepassComponent } from './changepass/changepass.component';
 import { InboxComponent } from './inbox/inbox.component';
 import { ReceivedMailComponent } from './received-mail/received-mail.component';
 import { ViewMailComponent } from './view-mail/view-mail.component';
+import { ComposeMailComponent } from './compose-mail/compose-mail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ViewMailComponent } from './view-mail/view-mail.component';
     ChangepassComponent,
     InboxComponent,
     ReceivedMailComponent,
-    ViewMailComponent
+    ViewMailComponent,
+    ComposeMailComponent
   ],
   imports: [
     BrowserModule,

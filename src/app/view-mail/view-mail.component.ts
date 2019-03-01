@@ -13,4 +13,9 @@ export class ViewMailComponent implements OnInit {
   ngOnInit() {
   }
 
+  onReply() {
+    this.service.composeClicked = true;
+    this.service.mailClicked = false;
+  }
+
 }

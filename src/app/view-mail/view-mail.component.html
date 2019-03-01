@@ -1,4 +1,4 @@
-<mat-card class="mailreadbox">
+<mat-card class="mailreadbox" >
 
 
   <div class="row">
@@ -13,10 +13,10 @@
     </div>
   </div>
   <hr><br><br>
-  <p>{{service.mail.mail_body}}</p>
+  <p class="mailbodylimit">{{service.mail.mail_body}}</p>
   <div class="text-center replycolor">
     <br><br>
-    <p>Click here to <a href="false" routerLink="/compose">Reply</a></p>
+    <p>Click here to <a class="pointer" (click)="onReply()">Reply</a></p>
     <br><br>
   </div>
 

@@ -10,7 +10,8 @@ obj = {
   username: 'abc1@mailer.com'
 };
 mail;
-mailClicked = 'false';
+mailClicked = false;
+composeClicked = false;
   constructor(private http: HttpClient) { }
 
   getAllUsers() {
@@ -20,6 +21,10 @@ mailClicked = 'false';
 
   getReceivedMailbyId(id) {
     const x = this.http.get(`https://localhost:44307/api/receivedmail/${id}`);
+    return x;
+  }
+  deleteReceivedMail(id) {
+    const x = this.http.delete(`https://localhost:44307/api/receivedmail/${id}`);
     return x;
   }
 }

@@ -1,0 +1,40 @@
+<mat-card>
+  <div>
+    <mat-form-field class="mailtoinput">
+        <input type="email" matInput placeholder="Email">
+  </mat-form-field>
+   <button class="btn btn-primary" *ngIf="!mailstatus1" (click)="changemailstatus1()" mat-raised-button>Add Participants</button><br>
+  </div>
+  <div *ngIf="mailstatus1">
+  <mat-form-field class="mailtoinput">
+      <input type="email" matInput placeholder="Email">
+</mat-form-field>
+<button *ngIf="!mailstatus2" (click)="changemailstatus2()" class="btn btn-primary" mat-raised-button>Add Participants</button>
+<br>
+</div>
+<div *ngIf="mailstatus2">
+<mat-form-field class="mailtoinput">
+    <input type="email" matInput placeholder="Email">
+</mat-form-field>
+<button *ngIf="!mailstatus3" (click)="changemailstatus3()" class="btn btn-primary" mat-raised-button>Add Participants</button>
+<br>
+</div>
+<div *ngIf="mailstatus3">
+<mat-form-field class="mailtoinput">
+    <input type="email" matInput placeholder="Email">
+</mat-form-field>
+<button *ngIf="!mailstatus4" (click)="changemailstatus4()" class="btn btn-primary" mat-raised-button>Add Participants</button>
+<br>
+</div>
+<div *ngIf="mailstatus4">
+<mat-form-field class="mailtoinput">
+    <input type="email" matInput placeholder="Email">
+</mat-form-field>
+<br>
+</div>
+  <mat-form-field class="mailtoinput">
+      <input type="text" matInput placeholder="Subject">
+</mat-form-field><br>
+
+  
+</mat-card>

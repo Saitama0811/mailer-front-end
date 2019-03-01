@@ -1,5 +1,15 @@
-<div class="receivedmailbox">
+<div>
   <mat-card *ngFor="let val of values">
-    <p (click)="onClickMail(receivedmail)" id="{{val.mail_ID}}" #receivedmail>{{val.mail_body}}</p>
+    <div class="row" (click)="onClickMail(receivedmail)" id="{{val.mail_ID}}" #receivedmail>
+      <div class="col">
+        <p class="text-center">{{val.mail_from}}</p>
+      </div>
+      <div class="col">
+        <p class="text-center">{{val.mail_subject}}</p>
+      </div>
+      <div class="col">
+        <p class="text-center pointer"><a (click)="onDeleteReceivedMail(receivedmail)">Delete</a></p>
+      </div>
+    </div>
   </mat-card>
 </div>
