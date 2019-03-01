@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 })
 export class InboxComponent implements OnInit {
 
+  inboxmail = true;
+  sentmail = false;
+  draftmail = false;
+  importantmail = false;
+  starredmail = false;
+  trashmail = false;
   constructor(private service: ApiConnectionService, private routes: Router) { }
 
-
-
   ngOnInit() {
-    this.service.getAllUsers().subscribe(val =>
+    this.service.getAllReceivedMail().subscribe(val =>
       console.log(val));
   }
 
@@ -26,6 +30,24 @@ export class InboxComponent implements OnInit {
   composebuttonClicked()  {
     this.service.mailClicked = false;
     this.service.composeClicked = true;
+  }
+
+  showInbox() {
+    this.inboxmail = true;
+    this.sentmail = false;
+    this.draftmail = false;
+    this.importantmail = false;
+    this.starredmail = false;
+    this.trashmail = false;
+  }
+
+  showSent() {
+    this.inboxmail = false;
+    this.sentmail = true;
+    this.draftmail = false;
+    this.importantmail = false;
+    this.starredmail = false;
+    this.trashmail = false;
   }
 
 }

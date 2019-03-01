@@ -19,6 +19,11 @@ import { InboxComponent } from './inbox/inbox.component';
 import { ReceivedMailComponent } from './received-mail/received-mail.component';
 import { ViewMailComponent } from './view-mail/view-mail.component';
 import { ComposeMailComponent } from './compose-mail/compose-mail.component';
+import { SentMailComponent } from './sent-mail/sent-mail.component';
+import { ImportantMailComponent } from './important-mail/important-mail.component';
+import { DraftMailComponent } from './draft-mail/draft-mail.component';
+import { TrashMailComponent } from './trash-mail/trash-mail.component';
+import { StarredMailComponent } from './starred-mail/starred-mail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { ComposeMailComponent } from './compose-mail/compose-mail.component';
     InboxComponent,
     ReceivedMailComponent,
     ViewMailComponent,
-    ComposeMailComponent
+    ComposeMailComponent,
+    SentMailComponent,
+    ImportantMailComponent,
+    DraftMailComponent,
+    TrashMailComponent,
+    StarredMailComponent
   ],
   imports: [
     BrowserModule,

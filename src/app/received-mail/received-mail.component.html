@@ -1,4 +1,7 @@
 <div>
+  <mat-card>
+    <h4 class="text-center">Inbox</h4>
+  </mat-card>
   <mat-card *ngFor="let val of values">
     <div class="row" (click)="onClickMail(receivedmail)" id="{{val.mail_ID}}" #receivedmail>
       <div class="col">
@@ -8,7 +11,7 @@
         <p class="text-center">{{val.mail_subject}}</p>
       </div>
       <div class="col">
-        <p class="text-center pointer"><a (click)="onDeleteReceivedMail(receivedmail)">Delete</a></p>
+        <p class="text-center pointer" (click)="refreshPage()"><a (click)="onDeleteReceivedMail(receivedmail)">Delete</a></p>
       </div>
     </div>
   </mat-card>

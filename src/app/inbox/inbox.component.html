@@ -34,8 +34,8 @@
     <mat-card class="inbox-options">
       <mat-card class="composebutton card text-center" (click)="composebuttonClicked()"><i class="fas fa-plus"></i>&nbsp;&nbsp;Compose</mat-card><br><br>
 
-      <p class="pointer inbox-ops"><i class="fas fa-inbox"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inbox</p>
-      <p class="pointer inbox-ops"><i class="fab fa-telegram-plane"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sent</p>
+      <p (click)="showInbox()" class="pointer inbox-ops"><i class="fas fa-inbox"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inbox</p>
+      <p (click)="showSent()" class="pointer inbox-ops"><i class="fab fa-telegram-plane"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sent</p>
       <p class="pointer inbox-ops">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Important</p>
       <p class="pointer inbox-ops"><i class="fas fa-star"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Starred</p>
       <p class="pointer inbox-ops"><i class="fas fa-file"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Draft</p>
@@ -44,7 +44,8 @@
     </mat-card>
   </div>
   <div class="col-lg-4 mailoptions">
-      <app-received-mail></app-received-mail>
+      <app-received-mail *ngIf="inboxmail"></app-received-mail>
+      <app-sent-mail *ngIf="sentmail"></app-sent-mail>
   </div>
   <div class="col-lg-6">
     <app-view-mail *ngIf="service.mailClicked"></app-view-mail>

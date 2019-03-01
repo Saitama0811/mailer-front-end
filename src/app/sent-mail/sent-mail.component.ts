@@ -3,17 +3,17 @@ import { ApiConnectionService } from '../api-connection.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-received-mail',
-  templateUrl: './received-mail.component.html',
-  styleUrls: ['./received-mail.component.css']
+  selector: 'app-sent-mail',
+  templateUrl: './sent-mail.component.html',
+  styleUrls: ['./sent-mail.component.css']
 })
-export class ReceivedMailComponent implements OnInit {
-  values;
+export class SentMailComponent implements OnInit {
+value;
   constructor(private service: ApiConnectionService, private routes: Router) { }
 
   ngOnInit() {
-    this.service.getAllReceivedMail().subscribe(val =>
-      this.values = val);
+    this.service.getAllSentMail().subscribe(val => this.value = val);
+    console.log(this.value);
   }
 
   refreshPage() {
@@ -24,12 +24,12 @@ export class ReceivedMailComponent implements OnInit {
     this.service.mailClicked = true;
     this.service.composeClicked = false;
     this.routes.navigate(['/inbox/' + elementid.id]);
-    this.service.getReceivedMailbyId(elementid.id).subscribe(val => this.service.mail = val);
+    this.service.getSentMailbyId(elementid.id).subscribe(val => this.service.mail = val);
     // this.service.getReceivedMailbyId()
   }
 
-  onDeleteReceivedMail(id: HTMLInputElement) {
-    this.service.deleteReceivedMail(id.id).subscribe(val => console.log(val));
+  onDeleteSentMail(id: HTMLInputElement) {
+    this.service.deleteSentMail(id.id).subscribe(val => console.log(val));
   }
 
 }
