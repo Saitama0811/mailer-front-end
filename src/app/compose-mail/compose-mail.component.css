@@ -6,3 +6,7 @@ mat-card{
 .mailtoinput{
     width: 100%;
 }
+
+.pointer{
+    cursor: pointer;
+}

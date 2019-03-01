@@ -1,3 +1,18 @@
-<p>
-  draft-mail works!
-</p>
+<div>
+  <mat-card>
+    <h4 class="text-center">Draft</h4>
+  </mat-card>
+  <mat-card *ngFor="let val of value">
+    <div class="row" (click)="onClickMail(draftmail)" id="{{val.draft_mail_ID}}" #draftmail>
+      <div class="col">
+        <p class="text-center"><b>{{val.mail_subject}}</b></p>
+      </div>
+      <div class="col">
+        <p class="text-center pointer">Edit</p>
+      </div>
+      <div class="col">
+        <p class="text-center pointer"><a (click)="onDeleteDraftMail(draftmail)">Delete</a></p>
+      </div>
+    </div>
+  </mat-card>
+</div>

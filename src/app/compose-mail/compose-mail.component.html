@@ -1,46 +1,94 @@
 <mat-card>
   <div>
     <mat-form-field class="mailtoinput">
-        <input type="email" matInput placeholder="Email To">
+        <input type="email" matInput placeholder="Email To" [(ngModel)]="mailto1" name="mailto1">
   </mat-form-field>
    <button class="btn btn-primary" *ngIf="!mailstatus1" (click)="changemailstatus1()" mat-raised-button>Add Participants</button><br>
   </div>
   <div *ngIf="mailstatus1">
   <mat-form-field class="mailtoinput">
-      <input type="email" matInput placeholder="Email To">
+      <input type="email" matInput placeholder="Email To" [(ngModel)]="mailto2" name="mailto2">
 </mat-form-field>
 <button *ngIf="!mailstatus2" (click)="changemailstatus2()" class="btn btn-primary" mat-raised-button>Add Participants</button>
 <br>
 </div>
 <div *ngIf="mailstatus2">
 <mat-form-field class="mailtoinput">
-    <input type="email" matInput placeholder="Email To">
+    <input type="email" matInput placeholder="Email To" [(ngModel)]="mailto3" name="mailto3">
 </mat-form-field>
 <button *ngIf="!mailstatus3" (click)="changemailstatus3()" class="btn btn-primary" mat-raised-button>Add Participants</button>
 <br>
 </div>
 <div *ngIf="mailstatus3">
 <mat-form-field class="mailtoinput">
-    <input type="email" matInput placeholder="Email To">
+    <input type="email" matInput placeholder="Email To" [(ngModel)]="mailto4" name="mailto4">
 </mat-form-field>
 <button *ngIf="!mailstatus4" (click)="changemailstatus4()" class="btn btn-primary" mat-raised-button>Add Participants</button>
 <br>
 </div>
 <div *ngIf="mailstatus4">
 <mat-form-field class="mailtoinput">
-    <input type="email" matInput placeholder="Email To">
+    <input type="email" matInput placeholder="Email To" [(ngModel)]="mailto5" name="mailto5">
 </mat-form-field>
 <br><br>
 </div>
 <br>
   <mat-form-field class="mailtoinput">
-      <input type="text" matInput placeholder="Subject">
+      <input type="text" matInput placeholder="Subject" [(ngModel)]="mailsubject" name="mailsubject">
 </mat-form-field><br>
 
 <mat-form-field class="mailtoinput">
-        <textarea rows="4" matInput placeholder="Please Write Something Here"></textarea>
+        <textarea rows="4" matInput placeholder="Please Write Something Here" [(ngModel)]="mailbody" name="mailbody"></textarea>
   </mat-form-field><br>
 
-  <i class="fas fa-paperclip fa-1x">Attachment</i>
+  <i class="fas fa-paperclip fa-1x pointer" data-toggle="modal" data-target="#myModal">&nbsp;&nbsp;Attachment</i>
+  <br><br>
+  <mat-checkbox name="checked" (click)="check()" [(ngModel)]="checked">Is Mail Important? Click Here!</mat-checkbox><br><br>
+  <div class="row">
+      <div class="col-3"></div>
+      <div class="col-3">
+        <button (click)="saveDraft()" class="btn btn-primary text-center" mat-raised-button>Save as Draft</button>
+      </div>
+      <div class="col-3">
+        <button (click)="onMailSend()" class="btn btn-success text-center" mat-raised-button>Send</button>        
+      </div>
+  </div>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Attachment</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <mat-form-field class="mailtoinput">
+                <input type="text" matInput placeholder="Attachment URL" [(ngModel)]="attachment1" name="attachment1">
+          </mat-form-field><br> 
+          <mat-form-field class="mailtoinput">
+            <input type="text" matInput placeholder="Attachment URL" [(ngModel)]="attachment2" name="attachment2">
+            </mat-form-field><br> 
+                <mat-form-field class="mailtoinput">
+            <input type="text" matInput placeholder="Attachment URL" [(ngModel)]="attachment3" name="attachment3">
+            </mat-form-field><br> 
+            <mat-form-field class="mailtoinput">
+                <input type="text" matInput placeholder="Attachment URL" [(ngModel)]="attachment4" name="attachment4">
+            </mat-form-field><br> 
+            <mat-form-field class="mailtoinput">
+                <input type="text" matInput placeholder="Attachment URL" [(ngModel)]="attachment5" name="attachment5">
+            </mat-form-field><br>          
+        </div>
+        <div class="modal-footer">
+            <button (click)="onAddAttachment()" class="btn btn-primary" data-dismiss="modal">Add</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
   
 </mat-card>

@@ -7,9 +7,11 @@ import { Subject} from 'rxjs';
 })
 export class ApiConnectionService {
 usermailobj = {
-  username: 'abc1@mailer.com'
+  username: 'abc1@mailer.com',
+  Name: 'Saurabh Goel'
 };
 mail;
+draftmail;
 mailClicked = false;
 composeClicked = false;
   constructor(private http: HttpClient) { }
@@ -77,6 +79,32 @@ composeClicked = false;
 
   deleteTrashMail(id) {
     const x = this.http.delete(`https://localhost:44307/api/trashmail/${id}`);
+    return x;
+  }
+
+  createmail(mailobj) {
+    const x = this.http.post(`https://localhost:44307/api/createmail`, mailobj);
+    return x;
+  }
+
+  saveDraftMail(draftobj) {
+    const x = this.http.post(`https://localhost:44307/api/savedraft`, draftobj);
+    return x;
+  }
+
+
+  getAllDraftMail() {
+    const x =  this.http.post(`https://localhost:44307/api/draftmail`, this.usermailobj);
+    return x;
+  }
+
+  getDraftMailbyId(id) {
+    const x = this.http.get(`https://localhost:44307/api/draftmail/${id}`);
+    return x;
+  }
+
+  deleteDraftMail(id) {
+    const x = this.http.delete(`https://localhost:44307/api/draftmail/${id}`);
     return x;
   }
 
