@@ -16,12 +16,14 @@ export class InboxComponent implements OnInit {
   importantmail = false;
   starredmail = false;
   trashmail = false;
+  searchmail = false;
   obj;
   constructor(private service: ApiConnectionService, private routes: Router) { }
 
   ngOnInit() {
     this.service.getAllReceivedMail().subscribe(val =>
       console.log(val));
+
   }
 
   refreshPage() {
@@ -30,15 +32,18 @@ export class InboxComponent implements OnInit {
 
   onsearch(searchdata: HTMLInputElement) {
     this.obj = {
-      mail_subject: searchdata.value
+      mail_subject: searchdata.value,
+      username: this.service.usermailobj.username
     };
     console.log(searchdata.value);
-    this.service.getMailsbySubject(this.obj).subscribe(val => console.log(val));
+    this.service.getMailsbySubject(this.obj).subscribe(val => this.service.searchResults = val);
+    console.log(this.service.searchResults);
   }
 
   composebuttonClicked()  {
     this.service.mailClicked = false;
     this.service.composeClicked = true;
+    this.service.replymail = '';
   }
 
   showInbox() {
@@ -48,6 +53,7 @@ export class InboxComponent implements OnInit {
     this.importantmail = false;
     this.starredmail = false;
     this.trashmail = false;
+    this.searchmail = false;
   }
 
   showSent() {
@@ -57,6 +63,7 @@ export class InboxComponent implements OnInit {
     this.importantmail = false;
     this.starredmail = false;
     this.trashmail = false;
+    this.searchmail = false;
   }
 
   showImportant() {
@@ -66,6 +73,7 @@ export class InboxComponent implements OnInit {
     this.importantmail = true;
     this.starredmail = false;
     this.trashmail = false;
+    this.searchmail = false;
   }
 
   showStarred() {
@@ -83,6 +91,7 @@ export class InboxComponent implements OnInit {
     this.draftmail = false;
     this.importantmail = false;
     this.starredmail = false;
+    this.searchmail = false;
     this.trashmail = true;
   }
 
@@ -91,8 +100,20 @@ export class InboxComponent implements OnInit {
     this.sentmail = false;
     this.draftmail = true;
     this.importantmail = false;
+    this.searchmail = false;
     this.starredmail = false;
     this.trashmail = false;
+  }
+
+  showSearch() {
+    this.inboxmail = false;
+    this.sentmail = false;
+    this.draftmail = false;
+    this.importantmail = false;
+    this.searchmail = true;
+    this.starredmail = false;
+    this.trashmail = false;
+
   }
 
 }

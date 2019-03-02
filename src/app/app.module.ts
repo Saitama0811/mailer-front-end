@@ -24,6 +24,7 @@ import { ImportantMailComponent } from './important-mail/important-mail.componen
 import { DraftMailComponent } from './draft-mail/draft-mail.component';
 import { TrashMailComponent } from './trash-mail/trash-mail.component';
 import { StarredMailComponent } from './starred-mail/starred-mail.component';
+import { SearchMailComponent } from './search-mail/search-mail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { StarredMailComponent } from './starred-mail/starred-mail.component';
     ImportantMailComponent,
     DraftMailComponent,
     TrashMailComponent,
-    StarredMailComponent
+    StarredMailComponent,
+    SearchMailComponent
   ],
   imports: [
     BrowserModule,

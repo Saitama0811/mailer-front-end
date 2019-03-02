@@ -17,10 +17,6 @@ value;
   }
 
 
-  refreshPage() {
-    setTimeout(() => {this.routes.navigate(['/inbox']); }, 0);
-  }
-
   onClickMail(elementid: HTMLInputElement) {
     this.service.mailClicked = true;
     this.service.composeClicked = false;

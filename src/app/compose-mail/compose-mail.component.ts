@@ -33,6 +33,7 @@ export class ComposeMailComponent implements OnInit {
   constructor(private service: ApiConnectionService) { }
 
   ngOnInit() {
+    this.mailto1 = this.service.replymail;
   }
 
   changemailstatus1() {
@@ -54,6 +55,10 @@ export class ComposeMailComponent implements OnInit {
     }    else {
       this.impchecked = 1;
     }
+  }
+
+  onMailCancel() {
+    this.service.composeClicked = false;
   }
   onAddAttachment() {
     this.att1 = this.attachment1;
@@ -89,6 +94,7 @@ export class ComposeMailComponent implements OnInit {
     this.service.createmail(this.maildata).subscribe(val => console.log(val));
 
     this.service.composeClicked = false;
+    this.service.replymail = '';
   }
 
   saveDraft() {

@@ -8,8 +8,11 @@
     border-radius: 20px;
 }
 .mailbodylimit{
-    height:16vw;
+    height:11vw;
     overflow: auto;
+}
+.mailreadbox {
+    margin-bottom: 2%;
 }
 
 .pointer {cursor: pointer;

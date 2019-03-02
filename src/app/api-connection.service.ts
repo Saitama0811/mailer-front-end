@@ -10,8 +10,11 @@ usermailobj = {
   username: 'abc1@mailer.com',
   Name: 'Saurabh Goel'
 };
+
+replymail;
 mail;
 draftmail;
+searchResults;
 mailClicked = false;
 composeClicked = false;
   constructor(private http: HttpClient) { }
@@ -110,6 +113,11 @@ composeClicked = false;
 
   getMailsbySubject(data) {
     const x =  this.http.post(`https://localhost:44307/api/search`, data);
+    return x;
+  }
+
+  getSearchMailbyId(id) {
+    const x = this.http.get(`https://localhost:44307/api/search/${id}`);
     return x;
   }
 

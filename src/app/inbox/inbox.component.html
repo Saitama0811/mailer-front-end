@@ -7,13 +7,13 @@
       <i (click)="refreshPage()" class="refresh fas fa-sync-alt fa-2x"></i>
     </div>
     <div class="col-md-6">
-      <mat-form-field #search (keyup.enter)="onsearch(search)">
+      <mat-form-field >
         <div class="row">
           <div class="col-1">
               <i class="fas fa-search text-muted"></i>
           </div>
           <div class="col-11">
-              <input  type="search" matInput placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search for Mails by Subject">
+              <input #search (click)="showSearch()" (keyup.enter)="onsearch(search)" value="" type="search" matInput placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search for Mails by Subject">
           </div>
         </div>
       </mat-form-field>
@@ -50,6 +50,7 @@
       <app-starred-mail *ngIf="starredmail"></app-starred-mail>
       <app-trash-mail *ngIf="trashmail"></app-trash-mail>
       <app-draft-mail *ngIf="draftmail"></app-draft-mail>
+      <app-search-mail *ngIf="searchmail"></app-search-mail>
   </div>
   <div class="col-lg-6">
     <app-view-mail *ngIf="service.mailClicked"></app-view-mail>

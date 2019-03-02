@@ -16,6 +16,8 @@ export class ViewMailComponent implements OnInit {
   onReply() {
     this.service.composeClicked = true;
     this.service.mailClicked = false;
+
+    this.service.replymail = this.service.mail.mail_from;
   }
 
 }

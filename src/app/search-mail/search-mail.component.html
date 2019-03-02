@@ -1,0 +1,15 @@
+<div>
+  <mat-card>
+    <h4 class="text-center">Search</h4>
+  </mat-card>
+  <mat-card *ngFor="let val of service.searchResults">
+    <div class="row" (click)="onClickMail(searchmail)" id="{{val.mail_ID}}" #searchmail>
+      <div class="col">
+        <p class="text-center">{{val.mail_from}}</p>
+      </div>
+      <div class="col">
+        <p class="text-center"><b>{{val.mail_subject}}</b></p>
+      </div>
+    </div>
+  </mat-card>
+</div>
