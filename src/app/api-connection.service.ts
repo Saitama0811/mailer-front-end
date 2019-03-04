@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject} from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,14 +21,23 @@ composeClicked = false;
   constructor(private http: HttpClient) { }
 
   onLogin(user, pass) {
-    // localStorage.setItem('username', JSON.stringify(username));
-    // this.username = JSON.parse(localStorage.getItem('username'));
-    // const user = JSON.parse(localStorage.getItem('username'));
     this.usermailobj = {
       username: user,
       password: pass
     };
     const x = this.http.post(`https://localhost:44307/api/login`, this.usermailobj);
+    return x;
+  }
+
+  onSignup(firstname, secondname, email, pass, phone) {
+    this.usermailobj = {
+      first_name: firstname,
+      second_name: secondname,
+      username: email,
+      password: pass,
+      phone_number: phone
+    };
+    const x = this.http.post(`https://localhost:44307/api/signup`, this.usermailobj);
     return x;
   }
 
