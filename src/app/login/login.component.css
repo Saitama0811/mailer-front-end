@@ -1,6 +1,7 @@
 mat-card{
     margin-top: 30%;
     padding: 4%;
+    background-color: beige;
     border-radius: 40px;
 }
 .row{
@@ -10,15 +11,26 @@ mat-card{
 mat-form-field {
     width: 100%;
 }
+.error-block {
+    background-color: lightcoral;
+    border: 1px solid red;
+}
+
 .loginbutton{
     width: 100%;
     background-color: #43425D;
     color: white;
 }
+
 .signupbutton{
     width: 100%;
     border: 1px solid #43425D;
     color: #43425D;
+}
+
+.imgsize{
+    width:100%;
+    height:100%;
 }
 
 h1{

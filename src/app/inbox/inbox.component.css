@@ -1,6 +1,7 @@
 mat-form-field{
     width: 100%;
 }
+
 .loginbutton{
     width: 100%;
     background-color: #43425D;
@@ -48,3 +49,9 @@ font-size: 1.2rem;}
 .composebutton:hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
+/* 
+mat-card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+} */
+
+

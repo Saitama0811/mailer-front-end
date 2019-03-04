@@ -1,7 +1,8 @@
 mat-card{
-    margin-top: 15%;
+    margin-top: 12%;
     padding: 4%;
     border-radius: 40px;
+    background-color: beige;
 }
 .row-padding{
     padding-left: 3%;
@@ -12,6 +13,10 @@ h1{
 }
 mat-form-field{
     width:100%;
+}
+
+.linksize{
+    font-size: 22px;
 }
 
 .form-width{

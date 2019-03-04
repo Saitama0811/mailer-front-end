@@ -5,7 +5,8 @@ import { MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule,  MatCardModule, MatListModule, MatMenuModule,
-    MatToolbarModule, MatSelectModule, MatOptionModule} from '@angular/material';
+    MatToolbarModule, MatSelectModule, MatOptionModule, } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

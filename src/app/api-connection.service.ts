@@ -6,11 +6,12 @@ import { Subject} from 'rxjs';
   providedIn: 'root'
 })
 export class ApiConnectionService {
-usermailobj = {
-  username: 'abc1@mailer.com',
-  Name: 'Saurabh Goel'
-};
+  Name;
+  username;
+  password;
 
+usermailobj;
+loginstatus;
 replymail;
 mail;
 draftmail;
@@ -19,7 +20,23 @@ mailClicked = false;
 composeClicked = false;
   constructor(private http: HttpClient) { }
 
+  onLogin(user, pass) {
+    // localStorage.setItem('username', JSON.stringify(username));
+    // this.username = JSON.parse(localStorage.getItem('username'));
+    // const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user,
+      password: pass
+    };
+    const x = this.http.post(`https://localhost:44307/api/login`, this.usermailobj);
+    return x;
+  }
+
   getAllReceivedMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/receivedmail`, this.usermailobj);
     return x;
   }
@@ -35,6 +52,10 @@ composeClicked = false;
   }
 
   getAllSentMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/sentmail`, this.usermailobj);
     return x;
   }
@@ -50,6 +71,10 @@ composeClicked = false;
   }
 
   getAllImportantMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/importantmail`, this.usermailobj);
     return x;
   }
@@ -60,6 +85,10 @@ composeClicked = false;
   }
 
   getAllStarredMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/starredmail`, this.usermailobj);
     return x;
   }
@@ -71,6 +100,10 @@ composeClicked = false;
 
 
   getAllTrashMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/trashmail`, this.usermailobj);
     return x;
   }
@@ -97,6 +130,10 @@ composeClicked = false;
 
 
   getAllDraftMail() {
+    const user = JSON.parse(localStorage.getItem('username'));
+    this.usermailobj = {
+      username: user
+    };
     const x =  this.http.post(`https://localhost:44307/api/draftmail`, this.usermailobj);
     return x;
   }

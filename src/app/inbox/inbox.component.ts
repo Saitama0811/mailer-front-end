@@ -18,11 +18,21 @@ export class InboxComponent implements OnInit {
   trashmail = false;
   searchmail = false;
   obj;
+  name;
   constructor(private service: ApiConnectionService, private routes: Router) { }
 
   ngOnInit() {
+    const user = localStorage.getItem('username');
+    console.log(user);
+    if (user === null) {
+      this.routes.navigate(['/login']);
+    } else {
+      this.name = localStorage.getItem('username');
+    }
     this.service.getAllReceivedMail().subscribe(val =>
       console.log(val));
+    this.name = localStorage.getItem('username');
+
 
   }
 
@@ -39,7 +49,11 @@ export class InboxComponent implements OnInit {
     this.service.getMailsbySubject(this.obj).subscribe(val => this.service.searchResults = val);
     console.log(this.service.searchResults);
   }
-
+  onLogout() {
+    localStorage.clear();
+    this.service.loginstatus = false;
+    this.routes.navigate(['/login']);
+  }
   composebuttonClicked()  {
     this.service.mailClicked = false;
     this.service.composeClicked = true;
